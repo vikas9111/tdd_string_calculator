@@ -4,6 +4,6 @@ class StringCalculator
   end
 
   def add
-    @number_string.split(",").map(&:to_i).sum
+    @number_string.split(/,|\n/).map(&:to_i).sum
   end
 end
