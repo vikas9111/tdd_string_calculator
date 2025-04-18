@@ -4,5 +4,6 @@ class StringCalculator
   end
 
   def add
+    return 0 if @number_string.empty?
   end
 end
