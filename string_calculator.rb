@@ -4,8 +4,6 @@ class StringCalculator
   end
 
   def add
-    return 0 if @number_string.empty?
-
-    @number_string.to_i
+    @number_string.split(",").map(&:to_i).sum
   end
 end
