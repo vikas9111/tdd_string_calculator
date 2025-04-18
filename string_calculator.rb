@@ -4,6 +4,20 @@ class StringCalculator
   end
 
   def add
-    @number_string.split(/,|\n/).map(&:to_i).sum
+    delimiter = extract_delimiter_and_change_number_string
+    @number_string.split(delimiter).map(&:to_i).sum
+  end
+
+  private
+
+  def extract_delimiter_and_change_number_string
+    if  @number_string.start_with?("//")
+      delimiter = @number_string[2]
+      @number_string = @number_string[4..]
+    else
+      delimiter = /,|\n/
+    end
+
+    delimiter
   end
 end
