@@ -12,5 +12,10 @@ RSpec.describe StringCalculator do
       string_calculator = StringCalculator.new("1")
       expect(string_calculator.add).to eq(1)
     end
+
+    it "handle numbers separated by comma" do
+      string_calculator = StringCalculator.new("1,5")
+      expect(string_calculator.add).to eq(6)
+    end
   end
 end

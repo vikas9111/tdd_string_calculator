@@ -5,5 +5,7 @@ class StringCalculator
 
   def add
     return 0 if @number_string.empty?
+
+    @number_string.to_i
   end
 end
