@@ -4,6 +4,9 @@ class StringCalculator
   end
 
   def add
+    negative_numbers = @number_string.scan(/-\d+/)
+    raise "negative numbers not allowed: #{negative_numbers.join(', ')}" if negative_numbers.any?
+
     delimiter = extract_delimiter_and_change_number_string
     @number_string.split(delimiter).map(&:to_i).sum
   end
